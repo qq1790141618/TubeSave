@@ -12,4 +12,9 @@
     <string name="download_list">下载列表</string>
     <string name="is_done">已完成</string>
     <string name="more_option">更多选项</string>
+    <string name="has_update">当前软件版本存在更新, 是否立即下载并安装更新? </string>
+    <string name="install_tip">软件包已经下载完成, 是否立即安装更新? </string>
+    <string name="update_right_now">立即更新</string>
+    <string name="do_not_alert_this_version">不再提示此版本</string>
+    <string name="install_update">安装更新</string>
 </resources>

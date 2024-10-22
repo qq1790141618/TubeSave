@@ -1,5 +1,6 @@
 package com.fixeam.tubesave.network
 
+import com.fixeam.tubesave.model.PackageUpdate
 import com.fixeam.tubesave.model.TuDown
 import com.fixeam.tubesave.model.YoutubeSearch
 import okhttp3.ResponseBody
@@ -18,4 +19,6 @@ interface ApiPorts {
     fun getViews(@Url url: String): Call<YoutubeSearch.VideoListResponse>
     @POST
     fun getDowns(@Url url: String, @Body body: TuDown.TuDownRequestBody): Call<TuDown.TuDownResponse>
+    @GET
+    fun getVersions(@Url url: String): Call<PackageUpdate.ResponseBody>
 }

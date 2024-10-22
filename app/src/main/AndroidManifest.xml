@@ -24,7 +24,8 @@
         <activity
             android:name=".view.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.TubeSave">
+            android:theme="@style/Theme.TubeSave"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -33,7 +34,9 @@
         <activity
             android:name=".view.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.TubeSave">
+            android:theme="@style/Theme.TubeSave"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity">
         </activity>
         <activity
             android:name=".view.LoadingView"
@@ -41,6 +44,18 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:theme="@style/Theme.Loading" />
+        <activity
+            android:name=".view.UpdateView"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
+            android:theme="@style/DialogStyle" />
+        <activity
+            android:name=".view.UpdateInstall"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity"
+            android:theme="@style/DialogStyle" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -14,6 +14,7 @@
         <item name="colorOnTertiary">@color/text_grey_night</item>
         <item name="cardBackgroundColor">@color/card_background_color_night</item>
         <item name="colorOnSurface">@color/half_transparent_black</item>
+        <item name="colorSurface">@color/half_transparent_white</item>
     </style>
 
     <!-- 回顶部按钮 -->

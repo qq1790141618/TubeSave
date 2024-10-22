@@ -99,7 +99,7 @@ class DownloadFragment : Fragment() {
             // Log.i("ABLog", "${ Calculate.bytesToReadableSize(percentage) } / ${ Calculate.bytesToReadableSize(totalSize) }, ${ Calculate.bytesToReadableSize(item.speed) } / s")
 
             // 更新进度显示
-            holder.binding.totalSize.text = if (item.status == "done") {
+            holder.binding.totalSize.text = if (item.status == "done" || item.status == "deleted") {
                 ""
             } else {
                 "${ Calculate.bytesToReadableSize(percentage) } / ${ Calculate.bytesToReadableSize(totalSize) }"
@@ -108,6 +108,8 @@ class DownloadFragment : Fragment() {
             holder.binding.progressBar.setProgress(ratio.toInt())
             holder.binding.ratio.text = if (item.status == "done") {
                 Calculate.bytesToReadableSize(totalSize)
+            } else if (item.status == "deleted") {
+                ""
             } else {
                 "${ ratio }%"
             }

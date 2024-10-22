@@ -1,6 +1,9 @@
 package com.fixeam.tubesave.network
 
+import android.content.Context
 import android.util.Log
+import com.fixeam.tubesave.controller.newVersion
+import com.fixeam.tubesave.model.PackageUpdate
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -39,6 +42,32 @@ class ApiUtils {
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                 Log.e("ABLog", "Error: $t")
                 call(t.message == "connection closed" || t.message?.contains("21") ?: false)
+            }
+        })
+    }
+
+    fun checkUpdate(context: Context, call: (Boolean) -> Unit) {
+        val versionCode = context
+            .packageManager
+            .getPackageInfo(context.packageName, 0)
+            .versionCode
+        service.getVersions("https://tubesave.fixeam.com/api/app?platform=android&current=$versionCode").enqueue(object: Callback<PackageUpdate.ResponseBody> {
+            override fun onResponse(call: Call<PackageUpdate.ResponseBody>, response: Response<PackageUpdate.ResponseBody>) {
+                if (response.isSuccessful && response.body() != null) {
+                    val body = response.body()!!
+                    if (body.success && body.data.isNotEmpty()) {
+                        newVersion = body.data.first()
+                        call(true)
+                    } else {
+                        call(false)
+                    }
+                } else {
+                    call(false)
+                }
+            }
+            override fun onFailure(call: Call<PackageUpdate.ResponseBody>, t: Throwable) {
+                Log.e("ABLog", "Error: $t")
+                call(false)
             }
         })
     }

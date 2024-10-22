@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import com.fixeam.tubesave.model.DownloadItem
+import com.fixeam.tubesave.model.PackageUpdate
 import com.fixeam.tubesave.utils.DownloadListUtils
 import com.fixeam.tubesave.view.DownloadFragment
 import com.fixeam.tubesave.view.SearchFragment
@@ -15,6 +16,7 @@ var searchFragment: SearchFragment? = null
 var downloadFragment: DownloadFragment? = null
 val downloadList = mutableListOf<DownloadItem>()
 var isDownloading = 0
+var newVersion: PackageUpdate.Info? = null
 
 fun openYouTubeVideo(context: Context, videoId: String) {
     // 构建 YouTube 视频的 URL

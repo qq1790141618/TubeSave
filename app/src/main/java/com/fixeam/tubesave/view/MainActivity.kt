@@ -1,6 +1,7 @@
 package com.fixeam.tubesave.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.media.MediaScannerConnection
 import android.os.Bundle
@@ -22,6 +23,7 @@ import com.fixeam.tubesave.controller.isDownloading
 import com.fixeam.tubesave.controller.searchFragment
 import com.fixeam.tubesave.databinding.ActivityMainBinding
 import com.fixeam.tubesave.model.DownloadItem
+import com.fixeam.tubesave.network.ApiUtils
 import com.fixeam.tubesave.network.DownloadManager
 import com.fixeam.tubesave.utils.ActivityDisplay
 import com.fixeam.tubesave.utils.DownloadListUtils
@@ -47,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         setNavigation()
         read()
         refreshList()
+        ApiUtils().checkUpdate(this) {
+            if (it) {
+                startActivity(Intent(this, UpdateView::class.java))
+            }
+        }
     }
 
     private fun setNavigation() {

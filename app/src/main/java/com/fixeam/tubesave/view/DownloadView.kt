@@ -47,32 +47,35 @@ class DownloadView(
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(panelBinding.posterInfo)
 
-        var audioFormat: TuDown.VideoFormat? = null
-        for (format in item.formats.reversed()) {
-            if (format.url.startsWith("https://rr") && format.ext == "webm") {
-                if (format.resolution.contains("audio") && audioFormat == null) {
-                    audioFormat = format
-                } else {
-                    val text = "${ format.resolution } ${ format.fps }fps (${ Calculate.bytesToReadableSize(
-                        (format.filesize + (audioFormat?.filesize ?: 0)).toLong()
-                    ) })"
-                    val button = PanelButton.get(app, text = text) {
-                        downloadListUtils?.addOne(DownloadItem(
-                            item.id,
-                            "${item.title}_${format.resolution}",
-                            thumbnail,
-                            format.formatId,
-                            format.url,
-                            0,
-                            audioFormat?.url ?: "",
-                            format.filesize.toLong(),
-                            (audioFormat?.filesize ?: 0).toLong()
-                        ))
-                        close()
-                    }
-                    panelBinding.buttonGroup.addView(button)
-                }
+        // 获取有效转码
+        val usefulFormats = item.formats.filter { it.url.startsWith("https://rr") && it.ext == "webm" }
+        // 找到音频格式
+        val audioFormat: TuDown.VideoFormat? = usefulFormats.lastOrNull {
+            it.resolution.contains("audio")
+        }
+        // 反向遍历格式并创建按钮
+        usefulFormats.reversed().filter {
+            !it.resolution.contains("audio")
+        }.forEach { format ->
+            val totalSize = (format.filesize + (audioFormat?.filesize ?: 0)).toLong()
+            val text = "${format.resolution} ${format.fps}fps (${Calculate.bytesToReadableSize(totalSize)})"
+
+            val button = PanelButton.get(app, text = text) {
+                downloadListUtils?.addOne(DownloadItem(
+                    item.id,
+                    "${item.title}_${format.resolution}",
+                    thumbnail,
+                    format.formatId,
+                    format.url,
+                    0,
+                    audioFormat?.url ?: "",
+                    format.filesize.toLong(),
+                    (audioFormat?.filesize ?: 0).toLong()
+                ))
+                close()
             }
+
+            panelBinding.buttonGroup.addView(button)
         }
 
         panelBinding.close.setOnClickListener {
