@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="border_width">0.3dp</dimen>
+    <dimen name="border_width_bold">1.3dp</dimen>
+    <dimen name="corner_radius_small">7dp</dimen>
+    <dimen name="corner_radius">12dp</dimen>
+    <dimen name="edge_distance_mini">7dp</dimen>
+    <dimen name="edge_distance_small">10dp</dimen>
+    <dimen name="edge_distance">15dp</dimen>
+    <dimen name="edge_distance_large">20dp</dimen>
+    <dimen name="text_size">13sp</dimen>
+    <dimen name="text_size_large">15sp</dimen>
+    <dimen name="text_size_extra_large">18sp</dimen>
+</resources>

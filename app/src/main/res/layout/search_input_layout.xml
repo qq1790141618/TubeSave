@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:paddingHorizontal="@dimen/edge_distance"
+    android:paddingVertical="@dimen/edge_distance_small"
+    android:background="?attr/cardBackgroundColor"
+    android:elevation="7dp"
+    android:outlineAmbientShadowColor="@color/shadow"
+    android:outlineSpotShadowColor="@color/shadow"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:viewBindingIgnore="false" >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="?attr/colorOnTertiary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="18dp"
+            android:textSize="@dimen/text_size"
+            android:maxLength="50"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@null"
+            android:singleLine="true"
+            android:hint="输入关键词/视频ID/视频链接"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="7dp"
+        android:backgroundTint="@color/brand_primary"
+        android:textColor="@color/white"
+        android:text="@string/search"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:iconTint="@color/white"
+        app:icon="@drawable/search"/>
+
+</LinearLayout>

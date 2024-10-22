@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">TubeSave</string>
+    <string name="app_type" translatable="false">release</string>
+    <string name="close">关闭</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="loading" tools:ignore="TypographyEllipsis">加载中...</string>
+    <string name="press_back_to_leave">再按一次退出应用</string>
+    <string name="search">搜索</string>
+    <string name="download">下载</string>
+    <string name="empty">暂无相关内容~您可以尝试粘贴视频ID或者视频链接直接进行解析~</string>
+    <string name="download_list">下载列表</string>
+    <string name="is_done">已完成</string>
+    <string name="more_option">更多选项</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="brand_primary">#FF0000</color>
+    <color name="brand_primary_light">#FFE5E5</color>
+    <color name="brand_primary_night">#B82525</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="background_color_night">#0D0C00</color>
+    <color name="text_color">@color/black</color>
+    <color name="text_color_night">@color/white</color>
+    <color name="card_background_color">@color/white</color>
+    <color name="card_background_color_night">#1F1F1F</color>
+    <color name="text_grey">#E3E3E3</color>
+    <color name="text_grey_night">#424242</color>
+    <color name="shadow">#CCCCCC</color>
+    <color name="danger">#FF6158</color>
+    <color name="half_transparent_danger">#CCFF938E</color>
+    <color name="day_night_grey">#A9AEB8</color>
+    <color name="half_transparent_white">#CCFFFFFF</color>
+    <color name="half_transparent_black">#CC000000</color>
+    <color name="success">#56C08D</color>
+</resources>

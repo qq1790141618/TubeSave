@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 返回顶部按钮  -->
+    <style name="Button.FloatButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <!-- 输入框样式 -->
+    <style name="HintTextAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">11sp</item>
+    </style>
+    <!-- Toolbar标题字体的颜色大小 -->
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="Toolbar.SubTitleText" parent="Toolbar.TitleText">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!-- 对话框式Activity样式 -->
+    <style name="DialogStyle" parent="Theme.TubeSave">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!-- 加载样式 -->
+    <style name="Theme.Loading" parent="DialogStyle">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <!-- Popup窗口样式 -->
+    <style name="PopupAnimationBottom" parent="Theme.AppCompat.Light">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+    <style name="PopupAnimationTop" parent="Theme.AppCompat.Light">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
+    <style name="PopupAnimationLeft" parent="Theme.AppCompat.Light">
+        <item name="android:windowEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_left</item>
+    </style>
+    <style name="PopupAnimationCenter" parent="Theme.AppCompat.Light">
+        <item name="android:windowEnterAnimation">@anim/open</item>
+        <item name="android:windowExitAnimation">@anim/close</item>
+    </style>
+</resources>

@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TubeSave" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <item name="android:windowBackground">@color/background_color_night</item>
+        <item name="android:windowDisablePreview">true</item>
+
+        <item name="colorOnBackground">@color/background_color_night</item>
+        <item name="colorPrimary">@color/text_color_night</item>>
+        <item name="colorOnSecondaryContainer">@color/text_color_night</item>
+        <item name="colorOnPrimary">@color/brand_primary_night</item>
+        <item name="colorOnTertiary">@color/text_grey_night</item>
+        <item name="cardBackgroundColor">@color/card_background_color_night</item>
+        <item name="colorOnSurface">@color/half_transparent_black</item>
+    </style>
+
+    <!-- 回顶部按钮 -->
+</resources>
